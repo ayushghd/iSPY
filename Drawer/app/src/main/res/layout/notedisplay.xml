@@ -1,0 +1,41 @@
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinatorLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.ajaykumar.drawer.MyNotes1"
+
+    >
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#5eaeff"
+        android:paddingTop="5dp"
+        >
+
+    </RelativeLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/btnadd"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="16dp"
+        app:backgroundTint="@color/colorPrimary"
+        app:srcCompat="@drawable/ic_action_aadd"
+        app:fabSize="auto" />
+
+    <ListView
+        android:id="@+id/listView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:dividerHeight="2dp"
+
+        ></ListView>
+</android.support.design.widget.CoordinatorLayout>

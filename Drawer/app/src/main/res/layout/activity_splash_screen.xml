@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#eee"
+    tools:context="com.example.ajaykumar.drawer.SplashScreen">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icoshopping"
+        android:layout_marginTop="118dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/imageView2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Created with"
+        android:textSize="20dp"
+        android:textColor="#111"
+        android:id="@+id/tv1"
+        android:layout_marginStart="68dp"
+        android:layout_marginBottom="31dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/imageView2" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_alignTop="@+id/tv1"
+        android:layout_marginStart="7dp"
+        android:layout_toEndOf="@+id/tv1"
+        android:paddingLeft="0dp"
+        android:src="@drawable/hear" />
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:src="@drawable/obs"
+        android:id="@+id/imageView4"
+        android:layout_below="@+id/imageView3"
+        android:layout_centerHorizontal="true" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#111"
+        android:text="by"
+        android:textSize="20dp"
+
+        android:layout_alignTop="@+id/imageView4"
+        android:layout_toStartOf="@+id/imageView4" />
+</RelativeLayout>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:background="#ffffff"
+    android:orientation="vertical"
+    android:weightSum="2" >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:weightSum="2" >
+
+        <TextView
+            android:id="@+id/txtnamerow"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1.2"
+            android:text="name"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            tools:ignore="HardcodedText,NestedWeights,RtlHardcoded" />
+
+        <TextView
+            android:id="@+id/txtidrow"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/txtdate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_weight="0.8"
+            android:gravity="right"
+            android:textColor="#111111"
+            android:text="@string/_2_2_2015"
+            tools:ignore="RtlHardcoded" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:weightSum="2" >
+
+        <TextView
+            android:id="@+id/txtremark"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="2"
+            android:maxHeight="50dp"
+            android:text="fgvgvkjdvmldngvmdngvmrfrfmmgbn"
+            android:textSize="15sp"
+            android:visibility="gone"
+            tools:ignore="HardcodedText,NestedWeights" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "507831845219",
+    "firebase_url": "https://ispy-a39e1.firebaseio.com",
+    "project_id": "ispy-a39e1",
+    "storage_bucket": "ispy-a39e1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:507831845219:android:9e366f1440a2f617",
+        "android_client_info": {
+          "package_name": "com.example.ajaykumar.drawer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "507831845219-q4smlfjdan4v6k21nfk9172va0cio58t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ajaykumar.drawer",
+            "certificate_hash": "34a139350e56921e38ed7e1ef592d5493522335d"
+          }
+        },
+        {
+          "client_id": "507831845219-dlvra177e5h4vouelee94ump5erjnc5r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAg743n7Qp9BbMl5REF0S5mC_wuoEiqAmc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "507831845219-dlvra177e5h4vouelee94ump5erjnc5r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <item
+        android:id="@+id/Save"
+        android:orderInCategory="100"
+        android:title="Save"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/Delete"
+        android:checkable="false"
+        android:enabled="true"
+        android:orderInCategory="100"
+        android:title="@string/delete"
+        android:visible="true"
+        app:showAsAction="always" />
+</menu>

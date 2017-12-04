@@ -1,0 +1,72 @@
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinatorLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+
+    <LinearLayout
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="10"
+        android:background="#5eaeff"
+
+
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="0.5dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:gravity="top|center"
+                android:textColor="@color/white"
+                android:text="NAME"
+                tools:ignore="NestedWeights" />
+
+            <EditText
+                android:id="@+id/txtname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5"
+                android:gravity="top|center"
+                android:hint="Name of Note Here"
+                android:textColor="@color/white"
+                android:textColorHint="#111111"
+                android:inputType="textAutoCorrect"
+                tools:ignore="HardcodedText"></EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="9"
+            android:orientation="vertical"
+            android:weightSum="2">
+
+            <EditText
+                android:id="@+id/txtcontent"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:textColor="@color/white"
+                android:gravity="top|left"
+                android:hint="Your Text Here"
+                android:textColorHint="#111111"
+                android:inputType="textMultiLine"
+                tools:ignore="NestedWeights,RtlHardcoded"></EditText>
+        </LinearLayout>
+
+    </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

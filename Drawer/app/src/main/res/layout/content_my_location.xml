@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.ajaykumar.drawer.MyLocation"
+    tools:showIn="@layout/app_bar_my_location">
+
+</android.support.constraint.ConstraintLayout>-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".MyLocation">
+
+<fragment
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/map"
+    android:name="com.google.android.gms.maps.SupportMapFragment"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.example.ajaykumar.drawer.MyLocation"
+    tools:showIn="@layout/app_bar_my_location"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#cc3b60a7"
+            android:orientation="horizontal"
+
+            >
+
+            <ImageButton
+                android:id="@+id/buttonCurrent"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="15dp"
+                android:background="@mipmap/ic_location" />
+
+
+            <ImageButton
+                android:id="@+id/buttonView"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@mipmap/ic_share"
+
+                android:layout_alignTop="@+id/buttonCurrent"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="8dp" />
+
+        </RelativeLayout>
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,77 @@
+<resources>
+    <string name="app_name">iSPY</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="title_activity_notepad">Notepad</string>
+    <string name="title_activity_navigate">Navigate</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="route_distance">Distance</string>
+    <string name="route_distance_value">40.2 Km</string>
+    <string name="route_duration">Duration</string>
+    <string name="route_duration_value">48 mins</string>
+    <string name="server_error">Server error. Something when wrong with the server</string>
+    <string name="title_activity_navigation">Emergency Calls</string>
+    <string name="title_activity_notepad1">Notepad</string>
+    <string name="title_activity_dashboard">Dashboard</string>
+    <string name="title_activity_my_location">My Location</string>
+    <string name="google_maps_key">AIzaSyC_RfVCnBVEXzpgdXshKDye5a1B5V_3upo</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_shortest_distance">Shortest Distance</string>
+    <string name="_2_2_2015">2/2/2015</string>
+    <string name="text_accounts">All Accounts</string>
+    <string name="hint_name">Name</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_confirm_password">Confirm Password</string>
+    <string name="text_login">Login</string>
+    <string name="text_register">Register</string>
+    <string name="error_message_name">Enter Full Name</string>
+    <string name="error_message_email">Enter Valid Email</string>
+    <string name="error_message_age">Enter Age</string>
+    <string name="error_message_password">Enter Password</string>
+    <string name="success_message">Registration Successful</string>
+    <string name="text_not_member">No account yet? Create one</string>
+    <string name="text_already_member">Already a member? Login</string>
+    <string name="error_email_exists">Email Already Exists</string>
+    <string name="error_password_match">Password Does Not Matches</string>
+    <string name="error_valid_email_password">Wrong Email or Password</string>
+    <string name="text_hello">Hello,</string>
+    <string name="text_title">iSPY</string>
+    <string name="delete">delete</string>
+    <string name="title_activity_my_notes1">MyNotes1</string>
+    <string name="title_activity_faltu">Faltu</string>
+    <string name="userID">userID</string>
+    <string name="userName">UserName</string>
+
+    <string name="start_tracking">Start Tracking</string>
+    <string name="stop_tracking">Stop Tracking</string>
+    <string name="enter_transport_id">Enter username of email</string>
+    <string name="enter_email">Enter email</string>
+    <string name="enter_password">Enter password</string>
+    <string name="location_permissions_required">Location permissions are required for tracking
+        location. Please grant these permissions to continue.</string>
+    <string name="missing_inputs">Please enter a valid username, email and password</string>
+    <string name="tracking">Tracking &#x2713;</string>
+    <string name="not_tracking">Not tracking &#x2718;</string>
+    <string name="connecting">Connecting &#8230;</string>
+    <string name="status">status</string>
+    <string name="location_permission_required">Location permission required.</string>
+    <string name="gps_required">Gps not enabled.</string>
+    <string name="ok">OK</string>
+    <string name="enable">Enable</string>
+    <string name="auth_failed">Firebase authentication failed</string>
+    <string name="confirm_stop">Do you really want to disable location tracking?</string>
+
+    <string name="firebase_path" translatable="false">raw-locations/</string>
+    <string name="prefs" translatable="false">prefs</string>
+    <string name="transport_id" translatable="false">transport_id</string>
+    <string name="email" translatable="false">email</string>
+    <string name="password" translatable="false">password</string>
+    <string name="address">add</string>
+    <string name="title_activity_maps2">Map</string>
+    <string name="title_activity_maps3">Map</string>
+</resources>

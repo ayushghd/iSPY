@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:text="Enter the id of users you want to track"
+
+        android:textSize="30dp"
+        android:textColor="@color/io_accent1"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="100">
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:id="@+id/user1"
+        android:textColorHint="@color/darkgrey"
+        android:hint="User ID 1"
+        android:inputType="textPersonName"
+        android:layout_weight="70"
+         />
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="15"
+            android:id="@+id/button1"
+            android:textColor="#000000"
+            android:backgroundTint="#aaffbb"
+            android:text="T"/>
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="15"
+            android:id="@+id/button11"
+            android:backgroundTint="#0000ff"
+            android:text="R"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="100">
+
+    <EditText
+        android:id="@+id/user2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColorHint="@color/darkgrey"
+        android:ems="10"
+        android:hint="User ID 2"
+        android:layout_weight="70"
+        android:inputType="textPersonName"
+         />
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="15"
+            android:id="@+id/button2"
+            android:textColor="#000000"
+            android:backgroundTint="#aaffbb"
+            android:text="T"
+
+            />
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="15"
+            android:id="@+id/button12"
+            android:backgroundTint="#0000ff"
+            android:text="R"/>
+        </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="100">
+
+
+    <EditText
+        android:id="@+id/user3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColorHint="@color/darkgrey"
+        android:layout_weight="70"
+        android:ems="10"
+        android:hint="User ID 3"
+        android:inputType="textPersonName"
+        />
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="15"
+        android:id="@+id/button3"
+        android:backgroundTint="#aaffbb"
+
+        android:textColor="#000000"
+        android:text="T"/>
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="15"
+            android:id="@+id/button13"
+            android:backgroundTint="#0000ff"
+            android:text="R"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="100">
+
+
+    <EditText
+        android:id="@+id/user4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="User ID 4"
+        android:textColorHint="@color/darkgrey"
+    android:layout_weight="70"
+        android:inputType="textPersonName"
+         />
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="15"
+        android:backgroundTint="#aaffbb"
+        android:textColor="#000000"
+        android:id="@+id/button4"
+        android:text="T"/>
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="15"
+            android:id="@+id/button14"
+            android:backgroundTint="#0000ff"
+            android:text="R"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="100">
+
+
+    <EditText
+        android:id="@+id/user5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_weight="70"
+        android:inputType="textPersonName"
+        android:textColorHint="@color/darkgrey"
+        android:hint="User ID 5"
+        />
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="15"
+        android:id="@+id/button5"
+        android:textColor="#000000"
+        android:backgroundTint="#aaffbb"
+        android:text="T"/>
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="15"
+            android:backgroundTint="#0000ff"
+            android:id="@+id/button15"
+            android:text="R"/>
+        </LinearLayout>
+
+    <Button
+        android:id="@+id/gotomap"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorTextHint"
+        android:text="Go to Map" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="T=Track R=Route"
+        android:textColor="#111111"
+        android:textSize="20dp"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Play"
+        android:id="@+id/play"
+        android:visibility="gone"
+        />
+</LinearLayout>

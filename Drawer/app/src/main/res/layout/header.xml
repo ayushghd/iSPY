@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:layout_width="match_parent"
+    android:layout_height="160dp"
+    android:background="@drawable/side_nav_bar"
+    android:weightSum="1">
+
+    <ImageView
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:src="@drawable/sher2" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/userName"
+        android:id="@+id/userName"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_marginTop="8dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/userID"
+        android:id="@+id/userID"
+        android:textColor="@color/white"
+        />
+</LinearLayout>

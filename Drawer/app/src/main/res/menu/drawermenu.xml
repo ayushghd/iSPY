@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/ml" android:title="My Location" android:icon="@drawable/ic_location_on_black_24px" />
-    <item android:id="@+id/db" android:title="Suspect's nearby" android:icon="@drawable/ic_dashboard_black_24px"/>
+    <item android:id="@+id/db" android:title="Friend's nearby" android:icon="@drawable/ic_dashboard_black_24px"/>
     <item android:id="@+id/sr" android:title="Nearby Places" android:icon="@drawable/ic_distance"/>
 
     <item android:id="@+id/atk" android:title="Allow Tracking" android:icon="@drawable/ic_done"/>

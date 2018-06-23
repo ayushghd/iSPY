@@ -13,7 +13,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:weightSum="10"
-        android:background="#5eaeff"
 
 
         >
@@ -31,7 +30,6 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
                 android:gravity="top|center"
-                android:textColor="@color/white"
                 android:text="NAME"
                 tools:ignore="NestedWeights" />
 
@@ -42,7 +40,6 @@
                 android:layout_weight="1.5"
                 android:gravity="top|center"
                 android:hint="Name of Note Here"
-                android:textColor="@color/white"
                 android:textColorHint="#111111"
                 android:inputType="textAutoCorrect"
                 tools:ignore="HardcodedText"></EditText>
@@ -60,7 +57,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="2"
-                android:textColor="@color/white"
                 android:gravity="top|left"
                 android:hint="Your Text Here"
                 android:textColorHint="#111111"

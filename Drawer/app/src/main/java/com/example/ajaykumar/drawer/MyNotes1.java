@@ -19,6 +19,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
@@ -29,9 +30,9 @@ import com.firebase.ui.auth.AuthUI;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.squareup.picasso.Picasso;
 
-public class MyNotes1 extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+public class MyNotes1 extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private ListView obj;
     NDb mydb;
     FloatingActionButton btnadd;
@@ -43,6 +44,7 @@ public class MyNotes1 extends AppCompatActivity
     CoordinatorLayout coordinatorLayout;
     SimpleCursorAdapter adapter;
     Snackbar snackbar;
+    private ImageView profilepic;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -108,6 +110,8 @@ public class MyNotes1 extends AppCompatActivity
         mID.setText(userID);
         mID   = (TextView)navigationView.getHeaderView(0).findViewById(R.id.userName);
         mID.setText(UserName);
+        profilepic = (ImageView)navigationView.getHeaderView(0).findViewById(R.id.profileimage);
+        Picasso.get().load(FirebaseAuth.getInstance().getCurrentUser().getPhotoUrl().toString()).into(profilepic);
     }
 
     @Override
@@ -116,7 +120,9 @@ public class MyNotes1 extends AppCompatActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+            finish();
+            Intent intent = new Intent(this, MyLocation.class);
+            startActivity(intent);
         }
     }
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -142,6 +148,12 @@ public class MyNotes1 extends AppCompatActivity
                 return super.onOptionsItemSelected(item);
         }
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
+
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -153,9 +165,6 @@ public class MyNotes1 extends AppCompatActivity
             // Handle the camera action
         }
 
-        else if(id == R.id.abtus) {
-            startActivity(new Intent(getApplicationContext(),about.class));
-        }
         else if (id == R.id.ml) {
             startActivity(new Intent(getApplicationContext(), MyLocation.class));
 
@@ -174,6 +183,11 @@ public class MyNotes1 extends AppCompatActivity
             startActivity(new Intent(getApplicationContext(), Navigation.class));
         }
         else if (id == R.id.el) {
+
+        }
+        else if(id==R.id.abtus)
+        {
+            startActivity(new Intent(getApplicationContext(), AboutActivity.class));
 
         }
         else if (id == R.id.lg) {

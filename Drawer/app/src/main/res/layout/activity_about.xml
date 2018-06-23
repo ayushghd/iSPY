@@ -1,73 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.ajaykumar.drawer.about">
+    android:orientation="vertical">
 
-    <TextView
+    <android.support.design.widget.TabLayout
+        android:id="@+id/sliding_tabs"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:textSize="50dp"
-        android:textColor="#0080b7"
-        android:text="DEVELOPERS"
-        android:textAlignment="center"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
-    <TextView
-        android:layout_width="140dp"
-        android:layout_height="75dp"
-        android:text="Ayush Gupta    B.Tech(IT)     NIT Allahabad"
-        android:textSize="20dp"
-        android:textColor="#111111"
-        android:layout_marginTop="23dp"
-        android:layout_alignTop="@+id/imageView7"
-        android:layout_toStartOf="@+id/imageView7"
-        android:id="@+id/textView" />
-    <TextView
-        android:layout_width="160dp"
-        android:layout_height="75dp"
-        android:text="Rishabh Agarwal B.Tech(CE)        NIT Allahabad"
+        android:layout_height="wrap_content"
+        app:tabMode="fixed" />
 
-        android:textSize="20dp"
-        android:textColor="#111111"
-        android:layout_marginTop="15dp"
-        android:id="@+id/textView2"
-        android:layout_alignTop="@+id/imageView6"
-        android:layout_toStartOf="@+id/imageView6" />
-    <TextView
-        android:layout_width="160dp"
-        android:layout_height="75dp"
-        android:text="Priyanshu Singh  B.Tech(CSE)     NIT Allahabad"
-        android:textSize="20dp"
-        android:textColor="#111111"
-        android:layout_marginTop="29dp"
-        android:layout_below="@+id/imageView7"
-        android:layout_toEndOf="@+id/imageView5" />
-    <ImageView
-    android:layout_width="110dp"
-    android:layout_height="110dp"
-    android:src="@drawable/aa"
-    android:id="@+id/imageView7"
-    android:layout_marginBottom="23dp"
-    android:layout_above="@+id/imageView5"
-    android:layout_alignParentEnd="true" />
-    <ImageView
-        android:layout_width="120dp"
-        android:layout_height="140dp"
-        android:id="@+id/imageView5"
-        android:src="@drawable/p"
-        android:layout_above="@+id/textView2"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="16dp" />
-    <ImageView
-        android:layout_width="110dp"
-        android:layout_height="110dp"
-        android:id="@+id/imageView6"
-        android:src="@drawable/r"
-        android:layout_marginBottom="32dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true" />
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white" />
 
-</RelativeLayout>
+</LinearLayout>

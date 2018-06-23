@@ -9,6 +9,7 @@
 
     <ImageView
         android:layout_width="75dp"
+        android:id="@+id/profileimage"
         android:layout_height="75dp"
         android:src="@drawable/sher2" />
     <TextView

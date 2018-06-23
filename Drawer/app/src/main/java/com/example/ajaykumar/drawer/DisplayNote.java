@@ -120,6 +120,11 @@ public class DisplayNote extends AppCompatActivity {
                                 snackbar = Snackbar
                                         .make(coordinatorLayout, "Your note Updated Successfully!!!", Snackbar.LENGTH_LONG);
                                 snackbar.show();
+                                Intent intent = new Intent(
+                                        getApplicationContext(),
+                                        MyNotes1.class);
+                                startActivity(intent);
+                                finish();
                             } else {
                                 snackbar = Snackbar
                                         .make(coordinatorLayout, "There's an error. That's all I can tell. Sorry!", Snackbar.LENGTH_LONG);

@@ -1,6 +1,7 @@
 package com.example.ajaykumar.drawer;
 import com.example.ajaykumar.drawer.MapsActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
@@ -43,11 +44,10 @@ import java.util.Locale;
 import java.util.Map;
 
 import static com.example.ajaykumar.drawer.R.id.button1;
-import static com.example.ajaykumar.drawer.R.id.gotomap;
-import static com.example.ajaykumar.drawer.R.id.play;
 import static com.example.ajaykumar.drawer.R.id.transition_current_scene;
 
 public class trackedusers extends AppCompatActivity implements View.OnClickListener {
+    ProgressDialog progress;
     EditText user1;
     EditText user2;
     EditText user3;
@@ -67,6 +67,7 @@ public class trackedusers extends AppCompatActivity implements View.OnClickListe
     Button b6;
     Button pl;
     Intent i2;
+    int flag=0;
     private DatabaseReference mFirebaseTransportRef;
     private DatabaseReference mFirebaseTransportRef1;
     private DatabaseReference mFirebaseTransportRef2;
@@ -84,6 +85,7 @@ public class trackedusers extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.trackedusers);
         mPrefs = getSharedPreferences(getString(R.string.prefs), MODE_PRIVATE);
 
+
         user1 = (EditText) findViewById(R.id.user1);
         user2 = (EditText) findViewById(R.id.user2);
         user3 = (EditText) findViewById(R.id.user3);
@@ -96,7 +98,6 @@ public class trackedusers extends AppCompatActivity implements View.OnClickListe
             i++;
         }
         i=0;
-        pl=(Button)findViewById(R.id.play);
         array4.add(0,l);
         array4.add(1,l);
         b1 = (Button) findViewById(R.id.button1);
@@ -119,15 +120,18 @@ public class trackedusers extends AppCompatActivity implements View.OnClickListe
         b13.setOnClickListener(this);
         b14.setOnClickListener(this);
         b15.setOnClickListener(this);
-        pl.setOnClickListener(this);
-        b6=(Button)findViewById(R.id.gotomap);
+        b6=(Button)findViewById(R.id.gotomap1);
         b6.setOnClickListener(this);
         GPSTracker gps = new GPSTracker (trackedusers.this);
         double latitude = gps.getLatitude();
         double longitude= gps.getLongitude();
         LatLng k=new LatLng(latitude,longitude);
         array4.add(0,k);
-
+        progress = new ProgressDialog(this,R.style.AppCompatAlertDialogStyle);
+        progress.setMessage("Loading..");
+        progress.setCancelable(false);
+        progress.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        progress.setIndeterminate(true);
 
     }
 
@@ -135,38 +139,34 @@ public class trackedusers extends AppCompatActivity implements View.OnClickListe
     public void onClick(final View v) {
 
             switch (v.getId()) {
-                case play:
-                    try {
-                        Uri notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);
-                        Ringtone r = RingtoneManager.getRingtone(getApplicationContext(), notification);
-                        r.play();
-                    } catch (Exception e) {
-                        e.printStackTrace();
 
-                }
-                break;
                 case button1:
                     //Inform the user the button1 has been clicked
 
-                    if(user1.getText().toString().length()>0)
-                    loadPreviousStatuses(user1.getText().toString().replace('.',','),1);
-                    else
+                    if(user1.getText().toString().length()>0) {
+                        loadPreviousStatuses(user1.getText().toString().replace('.', ','), 1);
+                    }else
                         Toast.makeText(trackedusers.this, " Please Fill The User ID ", Toast.LENGTH_SHORT).show();
 
                     break;
                 case R.id.button2:
                     //Inform the user the button2 has been clicked
-                    if(user2.getText().toString().length()>0)
-                        loadPreviousStatuses(user2.getText().toString().replace('.',','),2);
-                    else
+                    if(user2.getText().toString().length()>0) {
+                        loadPreviousStatuses(user2.getText().toString().replace('.', ','), 2);
+
+                    }else
                         Toast.makeText(trackedusers.this, " Please Fill The User ID ", Toast.LENGTH_SHORT).show();
 
 
                     break;
                 case R.id.button3:
                     //Inform the user the button2 has been clicked
+
                     if(user3.getText().toString().length()>0)
+                    {
                         loadPreviousStatuses(user3.getText().toString().replace('.',','),3);
+
+                    }
                     else
                         Toast.makeText(trackedusers.this, " Please Fill The User ID ", Toast.LENGTH_SHORT).show();
 
@@ -174,8 +174,11 @@ public class trackedusers extends AppCompatActivity implements View.OnClickListe
                     break;
                 case R.id.button4:
                     //Inform the user the button2 has been clicked
-                    if(user4.getText().toString().length()>0)
-                        loadPreviousStatuses(user4.getText().toString().replace('.',','),4);
+                    if(user4.getText().toString().length()>0) {
+                        progress.show();
+                        loadPreviousStatuses(user4.getText().toString().replace('.', ','), 4);
+                        //pr
+                    }
                     else
                         Toast.makeText(trackedusers.this, " Please Fill The User ID ", Toast.LENGTH_SHORT).show();
 
@@ -189,12 +192,18 @@ public class trackedusers extends AppCompatActivity implements View.OnClickListe
 
 
                     break;
-                case R.id.gotomap:
-                    Intent intent = new Intent(trackedusers.this, MapsActivity.class);
-                    intent.putParcelableArrayListExtra("key1", array1);
-                    intent.putStringArrayListExtra("key2", array2);
-                    intent.putStringArrayListExtra("key3", array3);
-                    startActivity(intent);
+                case R.id.gotomap1:
+                    if(flag==1) {
+                        Intent intent = new Intent(trackedusers.this, MapsActivity.class);
+                        intent.putParcelableArrayListExtra("key1", array1);
+                        intent.putStringArrayListExtra("key2", array2);
+                        intent.putStringArrayListExtra("key3", array3);
+                        startActivity(intent);
+                    }
+                    else
+                    {
+                        Toast.makeText(trackedusers.this,"Please Fill atleast one User ID",Toast.LENGTH_SHORT).show();
+                    }
                     break;
                 case R.id.button11:
                     if(user1.getText().toString().length()>0) {
@@ -250,6 +259,7 @@ public class trackedusers extends AppCompatActivity implements View.OnClickListe
         }
 
     private void loadPreviousStatuses(final String user,final int id) {
+    progress.show();
         String transportId = user;
         FirebaseAnalytics.getInstance(this).setUserProperty("transportID", transportId);
         String path = getString(R.string.firebase_path) + transportId;
@@ -269,6 +279,7 @@ public class trackedusers extends AppCompatActivity implements View.OnClickListe
                 if (snapshot != null) {
                     if (id!=0 && id!=100)
                     Toast.makeText(trackedusers.this, "TRACKING STARTED", Toast.LENGTH_SHORT).show();
+                    flag=1;
                     Log.i("insideforloop", "insidedforloop");
                     for (DataSnapshot transportStatus : snapshot.getChildren()) {
                         mTransportStatuses.add(Integer.parseInt(transportStatus.getKey()),
@@ -329,20 +340,28 @@ public class trackedusers extends AppCompatActivity implements View.OnClickListe
                         Log.i("inside2NDintent",array4.get(1).toString());
                         i2 = new Intent(trackedusers.this, ShortestDistance.class);
                         i2.putParcelableArrayListExtra("key11", array4);
+                        progress.dismiss();
                         startActivity(i2);
                         array4.add(1,l);
                     }
-                    else
-                        Log.i("insideELSE","else"+array4.get(0).toString()+" "+array4.get(1).toString());
+                    else {
+                        Log.i("insideELSE", "else" + array4.get(0).toString() + " " + array4.get(1).toString());
+                        progress.dismiss();
+                    }
 
                 }
                 else{
+                    progress.dismiss();
                     Log.i("insideelse", "insidedelse");
-                    if(id!=0)
-                    Toast.makeText(trackedusers.this, user.replace(',','.') + " NOT FOUND ", Toast.LENGTH_SHORT).show();
-                    else
-                        Toast.makeText(trackedusers.this, user.replace(',','.') + " FIRST ALLOW YOUR TRACKING ", Toast.LENGTH_SHORT).show();
+                    if(id!=0) {
+                        Toast.makeText(trackedusers.this, user.replace(',', '.') + " NOT FOUND ", Toast.LENGTH_SHORT).show();
+
+                    }
+                    else {
+                        Toast.makeText(trackedusers.this, user.replace(',', '.') + " FIRST ALLOW YOUR TRACKING ", Toast.LENGTH_SHORT).show();
+                    }
                     array4.add(1,l);
+
                 }
 
             }
@@ -356,6 +375,7 @@ public class trackedusers extends AppCompatActivity implements View.OnClickListe
 
                 else{
                     Toast.makeText(trackedusers.this, user + " NOT FOUND ", Toast.LENGTH_SHORT).show();
+                    progress.dismiss();
                 }
             }
 

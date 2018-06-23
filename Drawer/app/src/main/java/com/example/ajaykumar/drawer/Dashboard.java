@@ -185,6 +185,9 @@ public class Dashboard extends AppCompatActivity
             sh.setType("text/plain");
             startActivity(sh);
         }
+        else if(id==R.id.abtus){
+            startActivity(new Intent(getApplicationContext(),AboutActivity.class));
+        }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;

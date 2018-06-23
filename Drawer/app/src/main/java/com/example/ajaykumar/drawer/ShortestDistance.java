@@ -349,7 +349,7 @@ public class ShortestDistance extends AppCompatActivity
         }
 
         else if(id == R.id.abtus) {
-            startActivity(new Intent(getApplicationContext(),about.class));
+            startActivity(new Intent(getApplicationContext(),AboutActivity.class));
         }
         else if (id == R.id.lg) {
             AuthUI.getInstance()

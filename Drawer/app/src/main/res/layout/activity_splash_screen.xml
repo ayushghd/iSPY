@@ -9,7 +9,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/icoshopping"
+        android:src="@drawable/applogo"
         android:layout_marginTop="118dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"

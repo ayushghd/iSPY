@@ -14,7 +14,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#5eaeff"
+        android:background="@color/colorPrimary"
         android:paddingTop="5dp"
         >
 
@@ -26,8 +26,9 @@
         android:layout_height="60dp"
         android:layout_gravity="end|bottom"
         android:layout_margin="16dp"
-        app:backgroundTint="@color/colorPrimary"
-        app:srcCompat="@drawable/ic_action_aadd"
+        app:backgroundTint="@color/white"
+        app:rippleColor="@color/colorPrimary"
+        android:src="@drawable/ic_add_black_24dp"
         app:fabSize="auto" />
 
     <ListView

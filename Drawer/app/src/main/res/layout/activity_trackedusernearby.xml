@@ -1,41 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <TextView
+    <Button
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:text="Enter the id of user whose nearby location you want"
-
+        android:layout_height="90dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:id="@+id/text1"
+        android:text="Enter the id of user to find his nearby"
+        android:background="@drawable/buttonstyle3"
         android:textSize="30dp"
-        android:textColor="@color/io_accent1"
+        android:textColor="@color/colorPrimary"
         />
-    <LinearLayout
+
+    <EditText
+        android:id="@+id/us"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:weightSum="100">
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:id="@+id/us"
-            android:textColorHint="@color/darkgrey"
-            android:hint="Enter User ID"
-            android:inputType="textPersonName"
-            android:layout_weight="100"
-            />
-        </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <Button
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="15"
-            android:id="@+id/btn"
-            android:textColor="#000000"
-            android:backgroundTint="#aaffbb"
-            android:text="Get NearBy Places"/>
-    </LinearLayout>
+        android:layout_above="@+id/btn"
+        android:layout_alignStart="@+id/text1"
+        android:layout_marginBottom="18dp"
+        android:layout_weight="100"
+        android:background="@drawable/buttonstroke"
+        android:ems="10"
+        android:hint="Enter User ID"
+        android:inputType="textPersonName"
+        android:textColorHint="@color/darkgrey" />
 
-    </LinearLayout>
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/text1"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="172dp"
+        android:layout_marginEnd="64dp"
+        android:layout_weight="15"
+        android:background="@drawable/buttongreen"
+        android:drawableLeft="@drawable/ic_near_me_black_24dp"
+        android:text="Get NearBy Places"
+        android:textColor="#ffffff" />
+
+    <ProgressBar
+        android:id="@+id/progressBar2"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="200dp"
+        android:layout_below="@+id/btn"
+        android:layout_centerInParent="true"
+        android:layout_height="200dp"
+        android:indeterminateDrawable="@drawable/circular"
+        android:max="100"
+        android:progress="20"
+        android:visibility="gone"
+        />
+
+</RelativeLayout>

@@ -24,22 +24,25 @@ repositories {
     maven {
         url "https://maven.google.com"
     }
+    jcenter()
 }
 ext {
     playServices = '11.4.0'
+    //htextview_version = "0.1.6"
 }
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-
-
+    //compile "com.hanks:htextview-line:$htextview_version"
     compile "com.google.android.gms:play-services-gcm:$playServices"
-    compile "com.google.firebase:firebase-auth:$playServices"
+     compile "com.google.firebase:firebase-auth:$playServices"
     compile "com.google.firebase:firebase-config:$playServices"
     compile "com.google.firebase:firebase-crash:$playServices"
     compile "com.google.firebase:firebase-database:$playServices"
+
+    //noinspection GradleCompatible
     compile 'com.android.support:appcompat-v7:26.1.0'
     compile 'com.android.support:design:26.1.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
@@ -54,6 +57,10 @@ dependencies {
     compile 'com.android.support:multidex:1.0.0'
     compile 'com.google.android.gms:play-services-auth:11.4.0'
     compile 'com.google.code.findbugs:jsr305:2.0.1'
+    implementation 'com.hanks:htextview-base:0.1.2'
+    implementation "com.hanks:htextview-line:0.1.2"
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
     testCompile 'junit:junit:4.12'
 }
 apply plugin: 'com.google.gms.google-services'

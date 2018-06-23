@@ -1,13 +1,16 @@
 package com.example.ajaykumar.drawer;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.location.Location;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.model.LatLng;
@@ -23,7 +26,10 @@ import java.util.LinkedList;
 import java.util.Map;
 
 public class Trackedusernearby extends AppCompatActivity implements View.OnClickListener{
-Button btn;
+    Button btn;
+    private ProgressBar progbar;
+    private int progstatus=0;
+    private Handler mHandler = new Handler();
     public double latitude;
     public double longitude;
     EditText userid;
@@ -39,6 +45,7 @@ Button btn;
         userid=(EditText)findViewById(R.id.us);
         btn=(Button)findViewById(R.id.btn);
         btn.setOnClickListener(this);
+
     }
 
     public void onClick(View v){
@@ -52,6 +59,11 @@ Button btn;
 
     }
     private void loadPreviousStatuses(final String user,final int id) {
+        final ProgressDialog progress = new ProgressDialog(this,R.style.AppCompatAlertDialogStyle);
+        progress.setMessage("Loading..");
+        progress.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        progress.setIndeterminate(true);
+        progress.show();
         String transportId = user;
         FirebaseAnalytics.getInstance(this).setUserProperty("transportID", transportId);
         String path = getString(R.string.firebase_path) + transportId;
@@ -88,20 +100,21 @@ Button btn;
                                 if(array1.get(0)!=k){
                                     Intent intent = new Intent(Trackedusernearby.this, MapsActivity3.class);
                                     intent.putParcelableArrayListExtra("key0", array1);
+                                    progress.dismiss();
                                     startActivity(intent);
                                 }
                                 String username = user;
                                 Log.i("insidedatachange", "BelowUSERNAME");
 
                                 String battery = status.get("power").toString();
-
+                                progress.dismiss();
 
                             }
                             else{
                                 Log.i("insideelse", "insidedelse");
 
                                 Toast.makeText(Trackedusernearby.this, user + " NOT FOUND ", Toast.LENGTH_SHORT).show();
-
+                                progress.dismiss();
 
                             }
 

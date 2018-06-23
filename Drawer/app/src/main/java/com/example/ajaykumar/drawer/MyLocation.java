@@ -6,9 +6,13 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
+import android.media.Image;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
@@ -27,6 +31,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -45,7 +50,11 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.squareup.picasso.Picasso;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.List;
 import java.util.Locale;
 
@@ -74,7 +83,7 @@ public class MyLocation extends AppCompatActivity
         private ImageButton buttonSave;
         private ImageButton buttonCurrent;
         private ImageButton buttonView;
-
+        private ImageView profilepic;
         //Google ApiClient
         private GoogleApiClient googleApiClient;
         public String userID;
@@ -92,8 +101,8 @@ public class MyLocation extends AppCompatActivity
                     ||contact != PackageManager.PERMISSION_GRANTED ){
                 ActivityCompat.requestPermissions(this, PERMISSIONS_REQUIRED, PERMISSIONS_REQUEST);
             }
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+            Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+            setSupportActionBar(toolbar);
             SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                     .findFragmentById(R.id.map);
             mapFragment.getMapAsync(this);
@@ -124,6 +133,10 @@ public class MyLocation extends AppCompatActivity
             mID.setText(userID);
             mID   = (TextView)navigationView.getHeaderView(0).findViewById(R.id.userName);
             mID.setText(UserName);
+
+            profilepic = (ImageView)navigationView.getHeaderView(0).findViewById(R.id.profileimage);
+            Picasso.get().load(FirebaseAuth.getInstance().getCurrentUser().getPhotoUrl().toString()).into(profilepic);
+
         }
     protected void onStart() {
         googleApiClient.connect();
@@ -171,7 +184,7 @@ public class MyLocation extends AppCompatActivity
         setPreference(add);
 
 
-        getCompleteAddressString(latitude,longitude);
+        String currLoc=getCompleteAddressString(latitude,longitude);
         //Creating a LatLng Object to store Coordinates
         LatLng latLng = new LatLng(latitude, longitude);
 
@@ -179,7 +192,7 @@ public class MyLocation extends AppCompatActivity
         mMap.addMarker(new MarkerOptions()
                 .position(latLng) //setting position
                 .draggable(true) //Making the marker draggable
-                .title("Current Location")); //Adding a title
+                .title(currLoc)); //Adding a title
         //Moving the camera
         mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
 
@@ -187,9 +200,12 @@ public class MyLocation extends AppCompatActivity
         mMap.animateCamera(CameraUpdateFactory.zoomTo(15));
 
         //Displaying current coordinates in toast
-        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
     }
-    private void getCompleteAddressString(double LATITUDE, double LONGITUDE) {
+
+
+
+    private String getCompleteAddressString(double LATITUDE, double LONGITUDE) {
         String strAdd = "";
         Geocoder geocoder = new Geocoder(getApplicationContext());
         try {
@@ -205,12 +221,14 @@ public class MyLocation extends AppCompatActivity
                 String postalCode = addresses.get(0).getPostalCode();
                 String knownName = addresses.get(0).getFeatureName();
                 add=address+", "+city+", "+state+", "+country;
+                strAdd=address+", "+city;
+                Toast.makeText(this,add,Toast.LENGTH_SHORT).show();
 
         } catch (Exception e) {
             e.printStackTrace();
 
         }
-
+        return strAdd;
     }
 
     @Override
@@ -308,7 +326,7 @@ public class MyLocation extends AppCompatActivity
         if(v == buttonView){
             Intent sh=new Intent();
             sh.setAction(Intent.ACTION_SEND);
-            sh.putExtra(Intent.EXTRA_TEXT,"I am here -> " +add);
+            sh.putExtra(Intent.EXTRA_TEXT,"I am here -> " +add+"\n**Sent via - iSPY android app**");
             sh.setType("text/plain");
             startActivity(sh);
         }
@@ -389,7 +407,7 @@ public class MyLocation extends AppCompatActivity
             startActivity(sh);
         }
         else if(id == R.id.abtus) {
-            startActivity(new Intent(getApplicationContext(),about.class));
+            startActivity(new Intent(getApplicationContext(),AboutActivity.class));
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

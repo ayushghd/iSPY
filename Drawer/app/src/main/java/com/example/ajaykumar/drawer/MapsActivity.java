@@ -61,4 +61,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
         // Add a marker in Sydney and move the camera
     }
+
+    @Override
+    public void onBackPressed() {
+        GoToMap.clear();
+        super.onBackPressed();
+    }
 }
+

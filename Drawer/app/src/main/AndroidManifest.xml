@@ -34,10 +34,7 @@
         android:roundIcon="@mipmap/ic_sherlock"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-        <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-        <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-        <uses-permission android:name="android.permission.INTERNET" />
+
 
         <service
             android:name=".TrackerService"
@@ -70,6 +67,7 @@
 
         <activity
             android:name=".SplashScreen"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -79,6 +77,7 @@
         </activity>
         <activity
             android:name=".Navigation"
+            android:screenOrientation="portrait"
             android:label="@string/title_activity_navigation"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
@@ -88,10 +87,12 @@
         <activity
             android:name=".Dashboard"
             android:label="@string/title_activity_dashboard"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".MyLocation"
             android:label="@string/title_activity_my_location"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -107,13 +108,16 @@
 
         <activity
             android:name=".MapsActivity"
+            android:screenOrientation="portrait"
             android:label="@string/title_activity_maps" />
         <activity
             android:name=".ShortestDistance"
+            android:screenOrientation="portrait"
             android:label="Route"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Login"
-            android:theme="@style/FirebaseUI    "
+            android:screenOrientation="portrait"
+            android:theme="@style/FirebaseUI"
             />
         <activity android:name=".activities.RegisterActivity" />
         <activity android:name=".activities.UsersListActivity" />
@@ -121,19 +125,30 @@
         <activity
             android:name=".MyNotes1"
             android:label="Notes"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activities.LoginActivity" />
-        <activity android:name=".TrackerActivity" />
-        <activity android:name=".trackedusers" />
+        <activity android:name=".activities.LoginActivity"
+
+            android:screenOrientation="portrait"/>
+        <activity android:name=".TrackerActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".trackedusers"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".MapsActivity2"
+            android:screenOrientation="portrait"
             android:label="@string/title_activity_maps2" />
         <activity
             android:name=".MapsActivity3"
+            android:screenOrientation="portrait"
             android:label="@string/title_activity_maps3" />
-        <activity android:name=".Trackedusernearby" />
-        <activity android:name=".HelpActivity" />
-        <activity android:name=".about"></activity>
+        <activity android:name=".Trackedusernearby"
+            android:screenOrientation="portrait" />
+        <activity android:name=".HelpActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".AboutActivity"
+            android:label="TEAM OBSIDIAN DETECTIVES"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

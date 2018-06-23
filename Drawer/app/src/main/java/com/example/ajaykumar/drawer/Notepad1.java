@@ -15,12 +15,15 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.ajaykumar.drawer.activities.LoginActivity;
 import com.firebase.ui.auth.AuthUI;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.squareup.picasso.Picasso;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -31,6 +34,7 @@ import java.io.OutputStreamWriter;
 public class Notepad1 extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
         EditText EditText1;
+        private ImageView profilepic;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +49,7 @@ public class Notepad1 extends AppCompatActivity
             }
         });
 */
+
         EditText1 = (EditText) findViewById(R.id.EditText1);
         EditText1.setText(Open("Note1.txt"));
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -55,6 +60,8 @@ public class Notepad1 extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        profilepic = (ImageView)navigationView.getHeaderView(0).findViewById(R.id.profileimage);
+        Picasso.get().load(FirebaseAuth.getInstance().getCurrentUser().getPhotoUrl().toString()).into(profilepic);
     }
     public void Save(String fileName) {
         try {
@@ -150,6 +157,11 @@ public class Notepad1 extends AppCompatActivity
             startActivity(new Intent(getApplicationContext(), Navigation.class));
         }
         else if (id == R.id.el) {
+
+        }
+        else if(id==R.id.abtus)
+        {
+            startActivity(new Intent(getApplicationContext(), AboutActivity.class));
 
         }
         else if (id == R.id.lg) {

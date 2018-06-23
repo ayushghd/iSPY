@@ -2,6 +2,9 @@ package com.example.ajaykumar.drawer;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -23,6 +26,8 @@ import com.firebase.ui.auth.IdpResponse;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.io.IOException;
+import java.net.URL;
 import java.util.Arrays;
 
 //import static com.example.ajaykumar.map.MapsActivity.RC_SIGN_IN;
@@ -43,13 +48,14 @@ public class Login extends AppCompatActivity {
 
         mFirebaseAuth = FirebaseAuth.getInstance();
 
-
         mAuthStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 if(user != null) {
                     Log.w(TAG, "signed in");
+
+
                     onSignInIntialize(user);
 
                 } else {

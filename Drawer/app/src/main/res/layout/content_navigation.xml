@@ -1,88 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/emergencycall"
+    android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.ajaykumar.drawer.Navigation"
-    tools:showIn="@layout/app_bar_navigation"
 
-    >
+    tools:showIn="@layout/app_bar_navigation">
 
-    <ImageView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="350dp"
-        android:src="@drawable/sherlocopy"
-        android:layout_marginBottom="162dp"
-        android:layout_alignBottom="@+id/bt1"
-        android:layout_alignParentStart="true" />
-    <at.markushi.ui.CircleButton
-        android:layout_marginLeft="30dp"
-        android:id="@+id/bt1"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/iconspolicestation"
-        app:cb_color="#6cecce"
-        app:cb_pressedRingWidth="16dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="9dp"
-        android:layout_marginBottom="54dp" />
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:orientation="horizontal">
 
-    <at.markushi.ui.CircleButton
-        android:id="@+id/bt2"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/iconsambulance"
-        app:cb_color="#6cecce"
-        app:cb_pressedRingWidth="16dp"
-        android:layout_alignTop="@+id/bt1"
-        android:layout_centerHorizontal="true" />
+        <at.markushi.ui.CircleButton
+            android:id="@+id/bt1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="left"
+            android:src="@drawable/police"
+            app:cb_color="#6cecce"
+            app:cb_pressedRingWidth="16dp" />
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" >
+        </Space>
+        <at.markushi.ui.CircleButton
+            android:id="@+id/bt2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/hospitalsign"
+            app:cb_color="#6cecce"
+            android:layout_gravity="right"
+            app:cb_pressedRingWidth="16dp" />
+    </LinearLayout>
 
-    <at.markushi.ui.CircleButton
-        android:id="@+id/bt3"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/iconsfire"
-        app:cb_color="#6cecce"
-        app:cb_pressedRingWidth="16dp"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="bottom"
+        android:orientation="horizontal">
 
-        android:layout_alignTop="@+id/bt1"
-        android:layout_alignParentEnd="true" />
+        <at.markushi.ui.CircleButton
+            android:id="@+id/bt3"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/firestation"
+            app:cb_color="#6cecce"
+            app:cb_pressedRingWidth="16dp" />
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" >
+        </Space>
+        <at.markushi.ui.CircleButton
+            android:id="@+id/bt4"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/manpng"
+            app:cb_color="#6cecce"
+            app:cb_pressedRingWidth="16dp" />
+    </LinearLayout>
 
-    <!--<at.markushi.ui.CircleButton
-        android:layout_marginLeft="30dp"
-        android:id="@+id/bt4"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/pr"
-        app:cb_color="#6cecce"
-        app:cb_pressedRingWidth="30dp"
-         android:layout_below="@+id/bt1" />
-
-    <at.markushi.ui.CircleButton
-        android:id="@+id/bt5"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/ri"
-        app:cb_color="#6cecce"
-        app:cb_pressedRingWidth="30dp"
-        android:layout_below="@+id/bt2"
-        android:layout_toRightOf="@+id/bt4"
-       />
-
-    <at.markushi.ui.CircleButton
-        android:id="@+id/bt6"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/ayushcircle"
-        app:cb_color="#6cecce"
-        app:cb_pressedRingWidth="30dp"
-        android:layout_below="@+id/bt3"
-        android:layout_toRightOf="@+id/bt5"
-       />-->
-
-
-
-</RelativeLayout>
+</LinearLayout>

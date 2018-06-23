@@ -17,4 +17,5 @@ Contributors -
   Rishabh Agarwal
 
 Some screenshots from the app -->
-(https://github.com/ayushghd/iSPY/blob/master/Screenshot_2018-06-23-15-30-00.png)
+
+![](Screenshot_2018-06-23-15-30-12.png) ![](Screenshot_2018-06-23-15-30-38.png) ![](Screenshot_2018-06-23-15-32-06.png) ![](Screenshot_2018-06-23-15-37-20.png) ![](Screenshot_2018-06-23-15-30-00.png) 
